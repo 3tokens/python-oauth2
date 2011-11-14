@@ -632,6 +632,9 @@ class Client(httplib2.Http):
 
         httplib2.Http.__init__(self, cache=cache, timeout=timeout, proxy_info=proxy_info)
 
+    def set_debuglevel(self,debug):
+        httplib2.debuglevel = debug
+        
     def set_signature_method(self, method):
         if not isinstance(method, SignatureMethod):
             raise ValueError("Invalid signature method.")
